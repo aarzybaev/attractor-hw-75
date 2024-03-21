@@ -20,7 +20,7 @@ app.post('/decode', (request, response) => {
   const password = request.body.password;
   const message = request.body.message;
   const decoded = Vigenere.Decipher(password).crypt(message);
-  response.send({decoded});
+  response.json({decoded});
 });
 
 app.listen(port, () => {
